@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 public class Conexion : Controller {
     [HttpGet("mongo")]
     public IActionResult DinosaurioMongoDb(){
-        return Ok("Me estoy conectando a mongodb");
+        MongoClient client = MongoClient(CadenasConexion.MONGO_DB);
+        var db = client.GetDataBase("Chichagon");
+        var collection = db.GetCollection<DinoMongo>("Dinosaurio");
+
+        var lista = collection.Find(FilterDefinition<Dinongo>.Empty).ToList();
+        return Ok(lista);
     }
 }
