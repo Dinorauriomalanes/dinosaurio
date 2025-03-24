@@ -9,8 +9,8 @@ public class DinoMongo{
     public decimal Largo {get; set;}
     public decimal Altura {get; set;}
     public string Alimentacion {get; set;} = string.Empty;
-    public string Dinosaurio {get; set;} = string.Empty;
+    public string Era {get; set;} = string.Empty;
     public bool Valido {get; set;}
     public int AnioDescubrimiento {get; set;}
-    public bool Valido {get; set;}
+    public bool Volador {get; set;}
 }
